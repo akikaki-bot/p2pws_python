@@ -9,6 +9,8 @@ from src.emitter import EventEmitter
 from src.types.p2pquakes.earthquakeReport import EarthquakeReports
 from src.types.p2pquakes.eew import EEW
 
+from utils.cache import DataCacheManager
+
 class Client( EventEmitter ):
     """
     Represents the p2pquake websocket client.
@@ -45,10 +47,17 @@ class Client( EventEmitter ):
         Start the websocket client.
 
         ⚠️ If you wanna use this function, you must call this function at the end of the script.
+
+    ## Events
+    - `ready() -> None` : Emitted when the websocket client is connected to the server.
+    - `earthquake( data: EarthquakeReports ) -> None` : Emitted when the websocket client receives an earthquake report.
+    - `eew( data: EEW ) -> None` : Emitted when the websocket client receives an EEW report.
+
     """
     option: clientOptions.ClientOptions
     ws: websocket.WebSocketApp
     isReady: bool = False
+    cache : DataCacheManager
 
     def __init__( 
             self, 
@@ -60,6 +69,7 @@ class Client( EventEmitter ):
             isDebug,
             isSandbox
         )
+        self.cache = DataCacheManager()
 
 
     def start( self ):
@@ -106,11 +116,15 @@ class Client( EventEmitter ):
 
             # 551 ・・・ 地震情報（震源・震度・各地の震度）
             if data['code'] == 551:
-                self.emit('earthquake', EarthquakeReports(data) )
+                dataClass = EarthquakeReports( data )
+                self.emit('earthquake', dataClass )
+                self.cache.set( dataClass._id, dataClass )
 
             # 556 ・・・ 緊急地震速報 配信データ
             if data['code'] == 556:
-                self.emit('eew', EEW( data ) )
+                dataClass = EEW( data )
+                self.emit('eew', dataClass )
+                self.cache.set( dataClass._id, dataClass )
 
         except Exception as e:
             self.__debug_message__(f"[client] json parsing error")

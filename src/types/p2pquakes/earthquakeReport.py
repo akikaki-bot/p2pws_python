@@ -1,6 +1,8 @@
-
 from typing import Union
+
 from src.types.p2pquakes.scale import Scale
+from src.types.p2pquakes.basicdata import BasicData
+
 from utils.convertMinus import convertMinusOne, convertValue
 
 class Hypocenter:
@@ -55,12 +57,18 @@ class Earthquake:
         self.maxScale = convertMinusOne( jsonObject["maxScale"] )
         self.time = jsonObject["time"]
 
-class EarthquakeReports:
+class EarthquakeReports ( BasicData ):
     """
     The basic data, code: 551
     """
     _id : str
+    """
+    情報を一意に識別するID
+    """
     code : int = 551
+    """
+    情報コード。常に551です。
+    """
     earthquake : Earthquake
     issue : Issue
     points : list[ Point ]
