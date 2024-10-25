@@ -3,11 +3,11 @@ import websocket
 import typing as type
 import json
 
-import src.types.clientOptions as clientOptions
-from src.emitter import EventEmitter
+import p2pws_python.types.clientOptions as clientOptions
+from p2pws_python.emitter import EventEmitter
 
-from src.types.p2pquakes.earthquakeReport import EarthquakeReports
-from src.types.p2pquakes.eew import EEW
+from p2pws_python.types.p2pquakes.earthquakeReport import EarthquakeReports
+from p2pws_python.types.p2pquakes.eew import EEW
 
 from utils.cache import DataCacheManager
 

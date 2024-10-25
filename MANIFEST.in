@@ -1,0 +1,7 @@
+include LICENCE
+include *.md
+exclude *.pyc
+
+exclude README.md
+include requirements.txt
+include setup.cfg

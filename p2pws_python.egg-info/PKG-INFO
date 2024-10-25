@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: p2pws_python
+Version: 1.0.0
+Summary: The client library for the P2PEarthquake Websocket API.
+Home-page: http://github.com/akikaki-bot/p2pws_python
+Author: akikaki
+Author-email: hello@akikaki.net
+License: MIT
+Keywords: WebsocketClient,P2PEarthquake
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+License-File: LICENCE
+Requires-Dist: asyncio
+Requires-Dist: websocket-client
+
+The Websocket client for p2p web api.
+
+## Installation
+
+```bash
+pip install p2pws_python
+```
+
+## Usage
+
+```python
+from p2pws_python.client import Client
+from p2pws_python.types.p2pquakes.earthquakeReport import EarthquakeReports
+
+client = Client(
+    # if you wanna enabled debug mode, add the arguments on client option, like this:
+    # isDebug = True
+    # Other, if you wanna connect to sandbox server, add the arguments on client option, like this:
+    # isSandbox = True
+)
+
+@client.on
+async def earthquake( data : EarthquakeReports ):
+    print( data.earthquake.hypocenter.name )
+
+client.start()
+```
+
+# License
+MIT License

@@ -1,7 +1,7 @@
 from typing import Union
 
-from src.types.p2pquakes.scale import Scale
-from src.types.p2pquakes.basicdata import BasicData
+from p2pws_python.types.p2pquakes.scale import Scale
+from p2pws_python.types.p2pquakes.basicdata import BasicData
 
 from utils.convertMinus import convertMinusOne, convertValue
 

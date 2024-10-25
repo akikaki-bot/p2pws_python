@@ -1,0 +1,13 @@
+LICENCE
+MANIFEST.in
+README.rst
+readme.md
+requirements.txt
+setup.py
+p2pws_python/__init__.py
+p2pws_python/client.py
+p2pws_python.egg-info/PKG-INFO
+p2pws_python.egg-info/SOURCES.txt
+p2pws_python.egg-info/dependency_links.txt
+p2pws_python.egg-info/requires.txt
+p2pws_python.egg-info/top_level.txt

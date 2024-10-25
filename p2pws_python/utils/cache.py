@@ -1,9 +1,9 @@
 from typing import Union
 from aiohttp import ClientSession
 
-from src.types.p2pquakes.earthquakeReport import EarthquakeReports
-from src.types.p2pquakes.eew import EEW
-from src.types.base.map import Map
+from p2pws_python.types.p2pquakes.earthquakeReport import EarthquakeReports
+from p2pws_python.types.p2pquakes.eew import EEW
+from p2pws_python.types.base.map import Map
 
 
 
