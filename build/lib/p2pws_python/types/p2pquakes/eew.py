@@ -1,6 +1,6 @@
 
-from types.p2pquakes.basicdata import BasicData
-from utils.convertMinus import convertMinusOne, convertValue
+from p2pws_python.types.p2pquakes.basicdata import BasicData
+from p2pws_python.utils.convertMinus import convertMinusOne, convertValue
 from typing import NewType, Union, Optional
 from enum import Enum
 
