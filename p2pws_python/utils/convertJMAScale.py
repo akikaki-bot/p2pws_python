@@ -1,6 +1,6 @@
 
 from typing import Union, Literal
-from p2pws_python.types.p2pquakes.scale import Scale
+from types.p2pquakes.scale import Scale
 
 shindoScales : dict[ int, str ] = {
     10: "1",
