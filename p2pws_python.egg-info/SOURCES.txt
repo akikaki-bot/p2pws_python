@@ -14,6 +14,12 @@ p2pws_python.egg-info/top_level.txt
 p2pws_python/emitter/__init__.py
 p2pws_python/types/__init__.py
 p2pws_python/types/clientOptions.py
+p2pws_python/types/base/map.py
+p2pws_python/types/p2pquakes/basicdata.py
+p2pws_python/types/p2pquakes/earthquakeReport.py
+p2pws_python/types/p2pquakes/eew.py
+p2pws_python/types/p2pquakes/scale.py
+p2pws_python/types/p2pquakes/tsunami.py
 p2pws_python/utils/__init__.py
 p2pws_python/utils/cache.py
 p2pws_python/utils/convertJMAScale.py
