@@ -3,13 +3,14 @@ import websocket
 import typing as type
 import json
 
-import p2pws_python.types.clientOptions as clientOptions
-from p2pws_python.emitter import EventEmitter
+import types.clientOptions as clientOptions
+from emitter import EventEmitter
 
-from p2pws_python.types.p2pquakes.earthquakeReport import EarthquakeReports
-from p2pws_python.types.p2pquakes.eew import EEW
+from types.p2pquakes.earthquakeReport import EarthquakeReports
+from types.p2pquakes.eew import EEW
+from types.p2pquakes.tsunami import Tsunami
 
-from p2pws_python.utils.cache import DataCacheManager
+from utils.cache import DataCacheManager
 
 class Client( EventEmitter ):
     """
@@ -118,6 +119,12 @@ class Client( EventEmitter ):
             if data['code'] == 551:
                 dataClass = EarthquakeReports( data )
                 self.emit('earthquake', dataClass )
+                self.cache.set( dataClass._id, dataClass )
+            
+            # 552 ・・・ 津波予報
+            if data['code'] == 552:
+                dataClass = Tsunami( data )
+                self.emit('tsunami', dataClass )
                 self.cache.set( dataClass._id, dataClass )
 
             # 556 ・・・ 緊急地震速報 配信データ

@@ -1,6 +1,6 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.4
 Name: p2pws_python
-Version: 1.0.0
+Version: 1.1.0
 Summary: The client library for the P2PEarthquake Websocket API.
 Home-page: http://github.com/akikaki-bot/p2pws_python
 Author: akikaki
@@ -18,5 +18,15 @@ Classifier: Topic :: Software Development :: Libraries :: Python Modules
 License-File: LICENCE
 Requires-Dist: asyncio
 Requires-Dist: websocket-client
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
 
 The Websocket client for p2p web api.
