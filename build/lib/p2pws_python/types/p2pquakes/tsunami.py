@@ -1,4 +1,4 @@
-from types.p2pquakes.basicdata import BasicData
+from .basicdata import BasicData
 from typing import Literal
 
 class TsunamiIssue:

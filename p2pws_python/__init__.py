@@ -1,4 +1,5 @@
 from . import *
+from .types import *
 
 __copyright__    = 'Copyright (C) 2024 akikaki'
 __version__      = '1.1.0'

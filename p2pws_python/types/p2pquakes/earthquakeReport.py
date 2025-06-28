@@ -1,9 +1,9 @@
 from typing import Union
 
-from types.p2pquakes.scale import Scale
-from types.p2pquakes.basicdata import BasicData
+from .scale import Scale
+from .basicdata import BasicData
 
-from utils.convertMinus import convertMinusOne, convertValue
+from p2pws_python.utils.convertMinus import convertMinusOne, convertValue
 
 class Hypocenter:
     depth: int
