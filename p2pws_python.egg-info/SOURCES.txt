@@ -11,5 +11,10 @@ p2pws_python.egg-info/SOURCES.txt
 p2pws_python.egg-info/dependency_links.txt
 p2pws_python.egg-info/requires.txt
 p2pws_python.egg-info/top_level.txt
+p2pws_python/emitter/__init__.py
 p2pws_python/types/__init__.py
 p2pws_python/types/clientOptions.py
+p2pws_python/utils/__init__.py
+p2pws_python/utils/cache.py
+p2pws_python/utils/convertJMAScale.py
+p2pws_python/utils/convertMinus.py

@@ -35,7 +35,7 @@ with open('README.rst', encoding='utf-8') as f:
 
 setup(
     name=package_name,
-    packages=[package_name, "p2pws_python.types"],
+    packages=[package_name, "p2pws_python.types", "p2pws_python.utils", "p2pws_python.emitter"],
 
     version=version,
 
