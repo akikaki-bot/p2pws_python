@@ -39,27 +39,27 @@ class Tsunami ( BasicData ):
     津波予報の内容です。
     """
     _id: str
+    code: 552
     """
     情報コードは常に552です。
     """
-    code: 552
+    time: str
     """
     受信日時。
     """
-    time: str
+    cancelled: bool
     """
     キャンセル報かどうか。
     trueの場合、areasの値は空配列になります。
     """
-    cancelled: bool
+    issue: TsunamiIssue
     """
     配信元の情報
     """
-    issue: TsunamiIssue
+    areas: list[TsunamiArea] | None
     """
     津波予報の詳細
     """
-    areas: list[TsunamiArea] | None
 
     def __init__( self, data: dict ) -> None:
         super().__init__(data)
